@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <cmath>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ public:
     void setY(int py) { y = py; }
     int getX() { return x; }
     int getY() { return y; }
+    double getR() { return sqrt(x * x + y * y); }
     void losuj(int a, int b);
 };
 
@@ -44,5 +46,17 @@ int main()
 
     for (int i = 0; i < 100; i++)
         cout << "(" << tab[i].getX() << ";" << tab[i].getY() << ") ";
+
+    double rmin = tab[0].getR(), rmax = tab[0].getR();
+    for (int i = 0; i < 100; i++)
+    {
+        if (tab[i].getR() < rmin)
+            rmin = tab[i].getR();
+        if (tab[i].getR() > rmax)
+            rmax = tab[i].getR();
+    }
+    cout << "\n----------------------------------\n";
+    cout << "R min =" << rmin << endl
+         << "R max=" << rmax << endl;
     return 0;
 }
