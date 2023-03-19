@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 int ile = 0;
@@ -49,38 +50,44 @@ void usunBaze();
 int main()
 {
     int wybor = 0;
-    system("clr");
-    cout << "1 - Dodaj osobe" << endl
-         << "2 - Wypisz baze" << endl
-         << "3 - eksportuj do pliku" << endl
-         << "4 - importuj z pliku" << endl
-         << "8 - usun baze" << endl
-         << "9 - wyjdz z programu";
-    cin >> wybor;
-    cin.clear();
-    cin.ignore(10, '\n'); // czyszczenie bufor pamięci
-
-    switch (wybor)
+    while (true)
     {
-    case 1:
-        dodajOsobe();
-        break;
-    case 2:
-        wypiszBaze();
-        break;
-    case 3:
-        cout << "Kup wersje premium\n";
-        break;
-    case 4:
-        cout << "Kup wersje premium\n";
-        break;
-    case 8:
-        usunBaze();
-        break;
-    case 9:
-        usunBaze();
-        return 0;
+        cout << "\n---------------------------------\n"
+             << "1 - Dodaj osobe" << endl
+             << "2 - Wypisz baze" << endl
+             << "3 - eksportuj do pliku" << endl
+             << "4 - importuj z pliku" << endl
+             << "8 - usun baze" << endl
+             << "9 - wyjdz z programu" << endl
+             << "Wybierz opcje: ";
+        cin >> wybor;
+        cin.clear();
+        cin.ignore(10, '\n'); // czyszczenie bufor pamięci
+        cout << "\n---------------------------------\n";
+
+        switch (wybor)
+        {
+        case 1:
+            dodajOsobe();
+            break;
+        case 2:
+            wypiszBaze();
+            break;
+        case 3:
+            cout << "Kup wersje premium\n";
+            break;
+        case 4:
+            cout << "Kup wersje premium\n";
+            break;
+        case 8:
+            usunBaze();
+            break;
+        case 9:
+            usunBaze();
+            return 0;
+        }
     }
+
     return 0;
 }
 
@@ -102,4 +109,9 @@ void usunBaze()
     for (int i = 0; i < ile; i++)
         delete baza[i];
     ile = 0;
+}
+
+void eksportDoPliku()
+{
+    
 }
