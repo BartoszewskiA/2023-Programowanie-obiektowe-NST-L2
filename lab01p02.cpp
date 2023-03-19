@@ -47,6 +47,7 @@ Osoba *baza[1000];
 void wypiszBaze();
 void dodajOsobe();
 void usunBaze();
+void eksportDoPliku();
 int main()
 {
     int wybor = 0;
@@ -74,7 +75,7 @@ int main()
             wypiszBaze();
             break;
         case 3:
-            cout << "Kup wersje premium\n";
+            eksportDoPliku();
             break;
         case 4:
             cout << "Kup wersje premium\n";
@@ -112,6 +113,19 @@ void usunBaze()
 }
 
 void eksportDoPliku()
+{
+    fstream plik;
+    plik.open("baza.txt", ios::out);
+    plik << ile << endl;
+    for (int i = 0; i < ile; i++)
+    {
+        plik << baza[i]->getImie() << endl;
+        plik << baza[i]->getNazwisko() << endl;
+    }
+    plik.close();
+}
+
+void importZPliku()
 {
     
 }
