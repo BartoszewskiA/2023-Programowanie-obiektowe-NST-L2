@@ -1,11 +1,5 @@
-5
+2
 aaaa
-fghjhj
-bbbbb
-fgghhj
-vbbn
-dfgh
-aaaaa
 AAAAAA
-BBBBBB
-bbbbbbbb
+bbbbb
+BBBBBBBB
