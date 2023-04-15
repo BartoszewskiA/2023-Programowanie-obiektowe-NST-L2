@@ -12,8 +12,8 @@ private:
     double y;
 
 public:
-    Punkt(double X, double Y) : x(X), y(Y) {}
-    Punkt()
+    Punkt(double X, double Y) : x(X), y(Y) {} // konstruktor z parametrami
+    Punkt() // konstruktor domyslny
     {
         x = rand() % 201 - 100;
         y = rand() % 201 - 100;
