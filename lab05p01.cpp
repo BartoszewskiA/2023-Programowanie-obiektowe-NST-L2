@@ -27,8 +27,15 @@ public:
         suma += this->dana;
     }
     int getDana() { return dana; }
-    int getIle() { return ile; }
-    int getSuma() { return suma; }
+    static int getIle() { return ile; }
+    static int getSuma() { return suma; }
+    static double getSrednia()
+    {
+        if (ile > 0)
+            return (double)suma / ile;
+        else
+            return 0;
+    }
 };
 int Liczba::ile = 0;
 int Liczba::suma = 0;
@@ -43,16 +50,17 @@ int main()
     // Liczba x4(23);
     // cout << "x=" << x1.getDana() << " ile=" << x1.getIle() << endl;
 
-    Liczba *x1 = new Liczba(10);
-    Liczba *x2 = new Liczba(20);
-    Liczba *x3 = new Liczba(30);
-    x1->setDana(1000);
-    cout << "x=" << x1->getDana()
-         << " ile=" << x1->getIle()
-         << " suma=" << x1->getSuma()
+    // Liczba *x1 = new Liczba(10);
+    // Liczba *x2 = new Liczba(20);
+    // Liczba *x3 = new Liczba(30);
+    // x1->setDana(1000);
+    // cout << "x=" << x1->getDana() << endl;
+    cout << "ile=" << Liczba::getIle()
+         << " suma=" << Liczba::getSuma()
+         << " srednia=" << Liczba::getSrednia()
          << endl;
-    delete x1;
-    delete x2;
-    delete x3;
+    // delete x1;
+    // delete x2;
+    // delete x3;
     return 0;
 }
