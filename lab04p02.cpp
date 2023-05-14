@@ -4,11 +4,10 @@
 
 using namespace std;
 
-int ile = 0;
-
 class Zwierze
 {
 private:
+    static int ile;   //tylko deklaracja
     int id;
     string imie;
     string rasa;
@@ -65,6 +64,8 @@ public:
         return s.str();
     }
 };
+
+int Zwierze::ile = 0;
 
 int main()
 {
